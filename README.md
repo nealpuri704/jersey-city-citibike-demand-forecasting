@@ -34,12 +34,11 @@ python -m unittest discover -s tests -v
 | `notebooks/01_reproducible_analysis.ipynb` | Clean tutorial, visuals and reproducible held-out model comparison |
 | `src/modeling.py` | Reusable data loader and regression comparison functions |
 | `data/` | Monthly and station-level datasets supplied by the author |
-| `research_archive/` | Five original AP Research / WCTR-era notebooks (historical working files) |
 | `tests/` | Basic data and modeling checks |
 
 ## The historical R² ≈ 0.51 — an important distinction
 
-The original notebook `research_archive/AP Research 3 (with month and Grove St).ipynb` (code cell index 8, zero-based) contains saved output **R² = 0.5107** for a quadratic regression using log population, log income and their interaction after excluding selected stations. This was an **in-sample fit**, not a held-out test estimate. That cell depends on an intermediate input CSV **`nlls_predictions_with_two_independent_sqrt_nogrovest330.csv`**, which is *not included* in the supplied files, so the original number cannot currently be independently reproduced by running that cell from scratch.
+The original local notebook `AP Research 3 (with month and Grove St).ipynb` (code cell index 8, zero-based) contains saved output **R² = 0.5107** for a quadratic regression using log population, log income and their interaction after excluding selected stations. This was an **in-sample fit**, not a held-out test estimate. That cell depends on an intermediate input CSV **`nlls_predictions_with_two_independent_sqrt_nogrovest330.csv`**, which is *not included* in the supplied files, so the original number cannot currently be independently reproduced by running that cell from scratch.
 
 **Do not confuse that historical figure with new model performance.** The main notebook fits a fresh baseline/linear/quadratic-Ridge comparison to the available station-level CSV with a held-out station split and reports its own separate scores. It does not claim identical estimates to the historical paper.
 
